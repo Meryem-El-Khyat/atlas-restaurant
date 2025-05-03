@@ -13,12 +13,88 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            background-color: #f8f9fa;
         }
         .content {
             flex: 1;
         }
         .navbar-brand img {
-            height: 40px;
+            height: 60px;
+        }
+        
+        /* Couleurs principales */
+        .bg-dark {
+            background-color: #3a1019 !important; /* Rouge bordeaux foncé */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover,
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: #ff7200 !important; /* Orange vif */
+        }
+        
+        .dropdown-menu {
+            background-color: #3a1019;
+            border: 1px solid #ff7200;
+        }
+        
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .dropdown-item:hover {
+            background-color: #d60015; /* Rouge vif */
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: #d60015;
+            border-color: #d60015;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ff7200;
+            border-color: #ff7200;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+        
+        footer {
+            background-color: #3a1019 !important;
+        }
+        
+        /* Style pour les liens */
+        a {
+            color: #d60015;
+        }
+        
+        a:hover {
+            color: #ff7200;
+        }
+        
+        /* Style pour les boutons secondaires */
+        .btn-outline-primary {
+            color: #d60015;
+            border-color: #d60015;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: #d60015;
+            border-color: #d60015;
+            color: white;
         }
     </style>
     @yield('styles')
@@ -28,7 +104,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/logo.png') }}" alt="Atlas Restaurant Logo">
+                    <img src="{{ asset('images/logoo.jpg') }}" alt="Atlas Restaurant Logo">
                     Atlas Restaurant
                 </a>
                 

@@ -17,7 +17,10 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Routes pour l'administrateur
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+use App\Http\Middleware\AdminMiddleware;
+
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
+
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/reservations', [AdminController::class, 'reservations'])->name('admin.reservations');
     Route::post('/reservations', [AdminController::class, 'storeReservation'])->name('admin.reservations.store');
@@ -26,6 +29,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 // Routes pour l'utilisateur
 Route::middleware(['auth'])->prefix('user')->group(function () {
+    
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user.dashboard');
     Route::get('/profile', [UserController::class, 'profile'])->name('user.profile');
     Route::get('/reservation', [UserController::class, 'showReservationForm'])->name('user.reservation');
